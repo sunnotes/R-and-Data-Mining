@@ -1,0 +1,47 @@
+
+```{r}
+## 7.1
+set.seed(3147)
+x <- rnorm(100)
+summary(x)
+
+# outliers
+boxplot.stats(x)$out
+
+boxplot(x)
+
+
+y <- rnorm(100)
+df <- data.frame(x, y)
+rm(x, y)
+head(df)
+
+attach(df)
+# find the index of outliers from x
+(a <- which(x %in% boxplot.stats(x)$out))
+
+# find the index of outliers from y
+(b <- which(y %in% boxplot.stats(y)$out))
+
+detach(df)
+
+# outliers in both x and y
+(outlier.list1 <- intersect(a,b))
+
+plot(df)
+points(df[outlier.list1,], col="red", pch="+", cex=2.5)
+
+# outliers in either x or y
+(outlier.list2 <- union(a,b))
+
+plot(df)
+points(df[outlier.list2,], col="blue", pch="x", cex=2)
+
+
+## 7.2
+
+
+
+```
+
+

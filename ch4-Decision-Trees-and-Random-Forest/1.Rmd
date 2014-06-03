@@ -1,0 +1,19 @@
+Title
+========================================================
+
+
+
+```{r}
+
+setwd("/mnt/hgfs/WorkSpaces/R-and-Data-Mining/ch4-Decision-Trees-and-Random-Forest//")
+
+## 4.1
+str(iris)
+
+set.seed(1234)
+
+ind <- sample()
+
+```
+
+
