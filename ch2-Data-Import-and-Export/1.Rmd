@@ -1,0 +1,34 @@
+Title
+========================================================
+
+
+
+```{r}
+
+setwd("/mnt/hgfs/WorkSpaces/R-and-Data-Mining/ch2-Data-Import-and-Export")
+
+## 2.1
+a<- 1:10
+save(a,file="./data/dumData.Rdata")
+
+rm(a)
+
+load("./data/dumData.Rdata")
+print(a)
+
+
+## 2.2
+
+var1 <- 1:5
+var2 <- (1:5) / 10
+var3 <- c("R", "and", "Data Mining", "Examples", "Case Studies")
+df1 <- data.frame(var1, var2, var3)
+names(df1) <- c("VariableInt", "VariableReal", "VariableChar")
+write.csv(df1, "./data/dummmyData.csv", row.names = FALSE)
+df2 <- read.csv("./data/dummmyData.csv")
+print(df2)
+
+
+```
+
+
